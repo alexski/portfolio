@@ -6,15 +6,27 @@
 
 html {
   scroll-behavior: smooth;
+  min-width: 340px;
 }
 
 body {
   background-color: #2c353b;
 }
 
+footer {
+  color: white;
+  text-align: center;
+  font-size: 1em;
+  font-family: 'Times New Roman', serif;
+  margin: 1em;
+  padding-top: 2em;
+  display: block;
+}
+
 nav {
   width: 100%;
   height: 10vh;
+  min-height: 40px;
   background-color: #2c353b;
   position: fixed;
   text-align: center;
@@ -23,6 +35,7 @@ nav {
 .nav-item {
   display: inline-block;
   line-height: 10vh;
+  min-height: 40px;
 }
 
 .nav-item a{
@@ -31,13 +44,14 @@ nav {
   font-weight: 300;
   text-transform: uppercase;
   text-decoration: none;
-  text-align: center;
+  text-align: center center;
   color: white;
   width: 100%;
   padding: 1em;
 }
 
 .nav-item a:hover {
+  transition: background-color 0.5s ease;
   background-color: #2c354b;
 }
 
@@ -50,7 +64,7 @@ nav {
 /* FRONT PAGE - HOME PAGE*/
 
 .top-section {
-  background: url("../img/city.jpeg") rgb(68, 68, 68);
+  background: url("../img/city480.png") rgb(68, 68, 68);
   background-position: center center;
   background-size: cover;
   color: #93b1c7;
@@ -58,15 +72,30 @@ nav {
   font-family: 'Cantarell', sans-serif;
   line-height: 2em;
   height: 100vh;
+  min-height: 400px;
 }
 
 .blur-overlay {
   background: rgba(68, 68, 68, 0.85);
   height: 100vh;
+  min-height: 400px;
 }
 
 .ts-content {
   padding-top: 20vh;
+}
+
+.propic img {
+  height: 13.5em;
+  display: block;
+  margin: auto;
+  border-radius: 50%;
+  border: #2c353b 5px solid;
+}
+
+.ts-content h2 {
+  font-size: 1.2em;
+  color: white;
 }
 
 .ts-content a {
@@ -82,7 +111,7 @@ nav {
 }
 
 .ts-content i {
-  padding: 0.25em;
+  margin: 0em 0.25em;
 }
 
 .relocate-btn {
@@ -109,14 +138,6 @@ nav {
   color: inherit;
 }
 
-.propic img {
-  height: 13.5em;
-  display: block;
-  margin: auto;
-  border-radius: 50%;
-  border: #2c353b 5px solid;
-}
-
 /* HOME PAGE - ABOUT ME PAGE */
 
 #bio-section {
@@ -129,8 +150,7 @@ nav {
 }
 
 .bs-content {
-  padding: 1em 1.5em 0.25em 1.5em;
-  margin: auto;
+  margin: 1em 1.5em 0.25em 1.5em;
   text-align: left;
 }
 
@@ -145,7 +165,7 @@ nav {
 }
 
 .bs-content p {
-  padding: 0.25em 0.5em 0em 0.5em;
+  margin: 0.5em 0.5em 0em 0.5em;
 }
 
 .bs-content a {
@@ -156,6 +176,7 @@ nav {
 .top-btn {
   margin: 0.10em;
   padding: 1em;
+  display: block;
 }
 
 .top-btn a:hover {
@@ -188,18 +209,11 @@ nav {
 @media only screen and (min-width: 600px) {
     /* HOMEPAGE - FRONT PAGE */
   nav {
-    height: 12vh;
-    text-align: left;
+    text-align: right;
   }
 
-  .nav-item {
-    line-height: 12vh;
-  }
-
-  .nav-item a{
-    font-size: 1.5em;
-    text-align: center;
-    width: 100%;
+  nav ul {
+    margin-right: 2em;
   }
 
   .ts-content {
@@ -207,12 +221,7 @@ nav {
   }
 
   .ts-content i {
-    padding: 0.25em;
-  }
-
-  .ts-item {
-    vertical-align: middle;
-    display: inline-block;
+    padding: 0.1em;
   }
 
   .propic img {
@@ -222,7 +231,7 @@ nav {
     /* HOME PAGE - ABOUT ME PAGE */
 
   #bio-section {
-    padding-top: 12vh;
+    margin: 12vh 0vh 12vh 0vh;
   }
 
   .bs-content {
@@ -231,8 +240,46 @@ nav {
     text-align: left;
   }
 
-  .bio-img {
+  .bio-img img {
+    height: 13.5em;
+  }
+
+  .bs-content p {
+    margin: 0.25em 0.5em 0em 0.5em;
+  }
+}
+
+  /* FOR DESKTOP: */
+@media only screen and (min-width: 768px) {
+
+  /* HOME PAGE - FRONT PAGE */
+
+  .top-section {
+    background: url("../img/city1080.png") rgb(68, 68, 68);
+    background-position: center center;
+    background-size: cover;
+    color: #93b1c7;
+    height: 100vh;
+  }
+
+  .name-links {
+    margin-top: 2em;
+  }
+
+  .ts-item {
+    vertical-align: middle;
     display: inline-block;
+  }
+
+  /* HOME PAGE - ABOUT ME PAGE */
+
+  .bs-content {
+    padding: 0em;
+    margin: 1em 10em 0.25em 10em;
+    text-align: left;
+  }
+
+  .bio-img {
     margin: auto;
   }
 
@@ -241,12 +288,18 @@ nav {
   }
 
   .bs-content p {
-    padding: 0em;
-    margin: 0.25em 0.5em 0em 0.5em;
+    font-size: 1.1em;
+    margin: .75em 0em;
   }
+
 }
 
-  /* FOR DESKTOP: */
-@media only screen and (min-width: 768px) {
+@media only screen and (max-height: 438px) {
+  .relocate-btn {
+    display: none;
+  }
 
+  .top-btn {
+    display: block;
+  }
 }
